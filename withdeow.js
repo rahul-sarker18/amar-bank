@@ -26,5 +26,15 @@ document.getElementById('withdro-btn').addEventListener('click', function(){
 
     const totalWithdeoMony = newWithdrowAmount + privasWithdroTotal;
     withdroTotalElemant.innerText =totalWithdeoMony;
-    
+
+    // step6
+    const balanceDecpriton =document.getElementById('balance-total');
+    const balanceDecpritonString = balanceDecpriton.innerText;
+    const newBalanceDecpriton =parseFloat(balanceDecpritonString);
+
+    // step7
+
+    const totalBalance = newBalanceDecpriton - newWithdrowAmount;
+
+    balanceDecpriton.innerText = totalBalance;
 })
