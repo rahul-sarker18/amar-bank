@@ -14,6 +14,12 @@ document.getElementById('withdro-btn').addEventListener('click', function(){
     const withdroInputElement =document.getElementById('withdeow-input');
     const withdeowInputString = withdroInputElement.value;
     const newWithdrowAmount =parseFloat(withdeowInputString);
+
+    if(isNaN(withdeowInputString)){
+        alert('kjdfs')
+        withdroInputElement.value = '';
+        return 0;
+    }
     
     withdroInputElement.value = '';
 
@@ -25,16 +31,29 @@ document.getElementById('withdro-btn').addEventListener('click', function(){
     // step5
 
     const totalWithdeoMony = newWithdrowAmount + privasWithdroTotal;
-    withdroTotalElemant.innerText =totalWithdeoMony;
 
     // step6
     const balanceDecpriton =document.getElementById('balance-total');
     const balanceDecpritonString = balanceDecpriton.innerText;
     const newBalanceDecpriton =parseFloat(balanceDecpritonString);
 
+    if(newWithdrowAmount <= newBalanceDecpriton){
+        
+        withdroTotalElemant.innerText =totalWithdeoMony;
+        
+    }else{
+        alert('tume fokir')
+    }
+
+    
+
     // step7
+    if(newBalanceDecpriton >= newWithdrowAmount){
+        const totalBalance = newBalanceDecpriton - newWithdrowAmount;
+        balanceDecpriton.innerText = totalBalance;
+    }
+    
+   
 
-    const totalBalance = newBalanceDecpriton - newWithdrowAmount;
-
-    balanceDecpriton.innerText = totalBalance;
+    
 })
