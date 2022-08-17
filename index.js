@@ -15,6 +15,12 @@ document.getElementById('depojit-btn').addEventListener('click', function(){
     const depojitFildString =depojitTotalElement.value; 
     const newDepojitAmount = parseFloat(depojitFildString);
 
+    if(isNaN(depojitFildString)){
+        alert('plase type number');
+        depojitTotalElement.value ='';
+        return 0;
+    }
+
     depojitTotalElement.value = '';
 
     // step4
